@@ -29,7 +29,11 @@
 
         </activity>
         <activity
-            android:name=".ui.menu4.v.LinkmanActivityMain"
+            android:name=".ui.menu4.v.LinkmanActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensor" />
+        <activity
+            android:name=".ui.menu3.v.NewsActivity"
             android:launchMode="singleTask"
             android:screenOrientation="sensor" />
     </application>

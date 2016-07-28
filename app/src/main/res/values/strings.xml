@@ -2,4 +2,9 @@
     <string name="app_name">就是要炫酷的模板</string>
 
     <string name="baseUrl">https://api.github.com/</string>
+
+    <!-- 文本-->
+    <string name="text_linkman">联系人</string>
+    <string name="text_news">新闻资讯</string>
+    <string name="text_unknow">暂定</string>
 </resources>

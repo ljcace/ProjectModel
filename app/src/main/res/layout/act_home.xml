@@ -29,7 +29,7 @@
                 android:gravity="center"
                 android:paddingBottom="@dimen/dim30"
                 android:paddingTop="@dimen/dim30"
-                android:text="适配显示"
+                android:text="@string/text_unknow"
                 android:textColor="@color/black"
                 android:textSize="@dimen/dim40" />
 
@@ -40,18 +40,19 @@
                 android:gravity="center"
                 android:paddingBottom="@dimen/dim30"
                 android:paddingTop="@dimen/dim30"
-                android:text="暂定"
+                android:text="@string/text_unknow"
                 android:textColor="@color/black"
                 android:textSize="@dimen/dim40" />
 
             <TextView
+                android:id="@+id/tv_news"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:paddingBottom="@dimen/dim30"
                 android:paddingTop="@dimen/dim30"
-                android:text="暂定"
+                android:text="@string/text_news"
                 android:textColor="@color/black"
                 android:textSize="@dimen/dim40" />
 
@@ -63,7 +64,7 @@
                 android:gravity="center"
                 android:paddingBottom="@dimen/dim30"
                 android:paddingTop="@dimen/dim30"
-                android:text="联系人"
+                android:text="@string/text_linkman"
                 android:textColor="@color/black"
                 android:textSize="@dimen/dim40"
                 android:transitionName="shareview" />

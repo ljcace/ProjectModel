@@ -2,7 +2,7 @@ package com.ljc.projectmodel.ui.menu4.p;
 
 import com.ljc.projectmodel.ui.menu4.m.LinkmanModel;
 import com.ljc.projectmodel.ui.menu4.m.LinkmanModelImpl;
-import com.ljc.projectmodel.ui.menu4.v.LinkmanActivityMain;
+import com.ljc.projectmodel.ui.menu4.v.LinkmanActivity;
 import com.ljc.projectmodel.ui.menu4.v.LinkmanView;
 
 /**
@@ -12,7 +12,7 @@ public class LinkmanPersenterImpl implements LinkmanPersenter {
     private LinkmanView activity;
     private LinkmanModel model;
 
-    public LinkmanPersenterImpl(LinkmanActivityMain activity) {
+    public LinkmanPersenterImpl(LinkmanActivity activity) {
         this.activity = activity;
         model = new LinkmanModelImpl();
     }

@@ -3,10 +3,10 @@ package com.ljc.baselibrary.ui.v;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.ljc.baselibrary.ApplicationBase;
 import com.ljc.baselibrary.R;
-import com.ljc.baselibrary.manager.ActivityManager;
 import com.ljc.baselibrary.ui.p.BasePersenter;
 import com.ljc.baselibrary.ui.p.BasePersenterImlp;
 import com.ljc.baselibrary.utils.LogUtils;
@@ -16,7 +16,7 @@ import java.io.Serializable;
 /**
  * Created by lijiacheng on 16/6/28.
  */
-public class BaseActivity extends Activity implements BaseView {
+public class BaseActivity extends AppCompatActivity implements BaseView {
     private BasePersenter presenter;
 
     @Override

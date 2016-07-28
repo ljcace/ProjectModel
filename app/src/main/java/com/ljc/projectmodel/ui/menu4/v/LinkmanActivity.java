@@ -18,7 +18,7 @@ import butterknife.BindView;
 /**
  * Created by lijiacheng on 16/6/30.
  */
-public class LinkmanActivityMain extends MainActivity implements LinkmanView, SideBar.OnTouchingLetterChangedListener {
+public class LinkmanActivity extends MainActivity implements LinkmanView, SideBar.OnTouchingLetterChangedListener {
     @BindView(R.id.lv_linkman)
     ListView lv_linkman;
     @BindView(R.id.sideBar)
@@ -29,7 +29,7 @@ public class LinkmanActivityMain extends MainActivity implements LinkmanView, Si
     private LinkManAdapter adapter;
 
 
-    public LinkmanActivityMain() {
+    public LinkmanActivity() {
         super(R.layout.act_linkman, true);
     }
 
@@ -42,13 +42,13 @@ public class LinkmanActivityMain extends MainActivity implements LinkmanView, Si
         lv_linkman.setAdapter(adapter);
 
         sideBar.setOnTouchingLetterChangedListener(this);
-        CommTitle commTitle = new CommTitle(this);
-        commTitle.setTitle("联系人");
     }
 
     @Override
     public void refreshViews() {
         persenter.showLinkmanList();
+        CommTitle commTitle = new CommTitle(this);
+        commTitle.setTitle(getResources().getString(R.string.text_linkman));
     }
 
     @Override
