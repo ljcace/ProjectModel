@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dim1080"
+    android:layout_height="@dimen/dim150"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="联系人"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dim50" />
+
+    <ImageView
+        android:id="@+id/iv_left"
+        android:layout_width="@dimen/dim150"
+        android:layout_height="@dimen/dim150"
+        android:src="@mipmap/ic_back" />
+
+    <ImageView
+        android:id="@+id/iv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>

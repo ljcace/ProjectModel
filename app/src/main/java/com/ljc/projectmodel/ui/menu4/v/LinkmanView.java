@@ -1,0 +1,14 @@
+package com.ljc.projectmodel.ui.menu4.v;
+
+import com.ljc.projectmodel.beans.LinkManBean;
+
+import java.util.ArrayList;
+
+/**
+ * Created by lijiacheng on 16/6/30.
+ */
+public interface LinkmanView {
+    ArrayList<LinkManBean> getLinkmanList();
+
+    void setLinkmanList(ArrayList<LinkManBean> list);
+}
