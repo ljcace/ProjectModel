@@ -5,7 +5,7 @@ import android.util.DisplayMetrics;
 
 import com.ljc.baselibrary.finals.BaseConstant;
 import com.ljc.baselibrary.manager.ActivityManager;
-import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
+import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -104,7 +104,7 @@ public class ApplicationBase extends Application {
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
                 this).threadPriority(Thread.NORM_PRIORITY - 2)
                 .denyCacheImageMultipleSizesInMemory()
-                .diskCache(new UnlimitedDiscCache(cacheDir))
+                .diskCache(new UnlimitedDiskCache(cacheDir))
                 .diskCacheFileNameGenerator(new Md5FileNameGenerator())
                 .tasksProcessingOrder(QueueProcessingType.LIFO)// Not
                 .build();
