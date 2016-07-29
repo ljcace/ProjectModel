@@ -11,7 +11,6 @@ import com.ljc.projectmodel.ui.menu4.v.LinkmanActivity;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-
 /**
  * Created by lijiacheng on 16/6/29.
  */
@@ -31,7 +30,6 @@ public class HomeActivity extends MainActivity implements HomeView, View.OnClick
 
     @Override
     public void refreshViews() {
-
     }
 
     @OnClick({R.id.tv_linkman, R.id.tv_news})
