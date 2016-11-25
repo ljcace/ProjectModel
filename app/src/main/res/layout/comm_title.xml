@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_title"
     android:layout_width="@dimen/dim1080"
     android:layout_height="@dimen/dim150"
     android:background="@color/colorPrimaryDark"

@@ -29,11 +29,15 @@
 
         </activity>
         <activity
-            android:name=".ui.menu4.v.LinkmanActivity"
+            android:name=".ui.menu2.v.ImageZoomingActivity"
             android:launchMode="singleTask"
             android:screenOrientation="sensor" />
         <activity
             android:name=".ui.menu3.v.NewsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensor" />
+        <activity
+            android:name=".ui.menu4.v.LinkmanActivity"
             android:launchMode="singleTask"
             android:screenOrientation="sensor" />
     </application>

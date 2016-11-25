@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">BaseLibrary</string>
 
-    <string name="baseUrl">https://api.github.com/</string>
+    <string name="baseUrl">http://127.0.0.1:8081/fdd-api/http/accessPortal/accessPortal.action</string>
+
+    <string name="text_loading">正在请求网络数据...</string>
 </resources>

@@ -17,7 +17,7 @@ import java.util.ArrayList;
  */
 public class LinkManAdapter extends BaseListAdapter<LinkManBean> {
     public LinkManAdapter(ArrayList<LinkManBean> list) {
-        super(list, NODEFAULT);
+        super(list);
     }
 
     @Override

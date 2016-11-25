@@ -5,11 +5,6 @@ import android.util.DisplayMetrics;
 
 import com.ljc.baselibrary.finals.BaseConstant;
 import com.ljc.baselibrary.manager.ActivityManager;
-import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
-import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 import java.io.File;
 import java.util.HashMap;
@@ -93,21 +88,5 @@ public class ApplicationBase extends Application {
     }
 
     public void initLib() {
-        initImageLoader();
-    }
-
-    /**
-     * init ImageLoader
-     */
-    private void initImageLoader() {
-        File cacheDir = new File(BaseConstant.CACHE_DIR);
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
-                this).threadPriority(Thread.NORM_PRIORITY - 2)
-                .denyCacheImageMultipleSizesInMemory()
-                .diskCache(new UnlimitedDiskCache(cacheDir))
-                .diskCacheFileNameGenerator(new Md5FileNameGenerator())
-                .tasksProcessingOrder(QueueProcessingType.LIFO)// Not
-                .build();
-        ImageLoader.getInstance().init(config);
     }
 }

@@ -1,16 +1,17 @@
 package com.ljc.baselibrary.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.ljc.baselibrary.ApplicationBase;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -20,52 +21,23 @@ public abstract class BaseListAdapter<T> extends BaseAdapter {
     public Context mContext;
     public LayoutInflater mInflater;
     public ArrayList<T> mList;
-    public DisplayImageOptions options;
 
-    public static final int NOIMAGE = 1;
-    public static final int NODEFAULT = 2;
-    public static final int DEFAULT = 3;
-
-    protected BaseListAdapter(ArrayList<T> list) {
-        this(list, NOIMAGE);
-    }
-
-    protected BaseListAdapter(ArrayList<T> list, int imgType) {
-        this(list, imgType, -1);
-    }
-
-    protected BaseListAdapter(ArrayList<T> list, int imgType, int defalutImg) {
-        this(list, imgType, defalutImg, 0);
-    }
-
-    public BaseListAdapter(ArrayList<T> list, int imgType, int defalutImg, int radius) {
+    public BaseListAdapter(ArrayList<T> list) {
         mList = list;
         mContext = ApplicationBase.getInstance().getApplicationContext();
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if (imgType == NOIMAGE) {
-            options = null;
-        } else {
-            DisplayImageOptions.Builder builder = new DisplayImageOptions.Builder();
-            builder.delayBeforeLoading(1000)  // 下载前的延迟时间
-                    .cacheInMemory(true) // default  设置下载的图片是否缓存在内存中
-                    .bitmapConfig(Bitmap.Config.ARGB_8888) // default 设置图片的解码类型
-                    .displayer(new RoundedBitmapDisplayer(radius));
-            if (imgType == DEFAULT) {
-                if (defalutImg != -1)
-                    try {
-                        builder.showImageOnLoading(defalutImg) // 设置图片下载期间显示的图片
-                                .showImageForEmptyUri(defalutImg) // 设置图片Uri为空或是错误的时候显示的图片
-                                .showImageOnFail(defalutImg);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-            }
-            options = builder.build();
-        }
         init();
     }
 
     public void init() {
+    }
+
+    private void setImg(ImageView imageView, String path) {
+        if (path.contains("http")) {
+            Glide.with(mContext).load(path).diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView);
+        } else {
+            Glide.with(mContext).load(new File(path)).diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView);
+        }
     }
 
     @Override

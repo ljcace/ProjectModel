@@ -7,6 +7,7 @@ import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -16,10 +17,19 @@ import retrofit2.http.Path;
  */
 public interface InterfaceApi {
     @Headers({
-            "Accept: application/vnd.github.v3.full+json",
-            "User-Agent: Retrofit-Sample-App"
+            "appcode: fdd",
+            "appversion: 1.0",
+            "languagetype:zh-cn",
+            "devicetype:android",
+            "devicemodel:phone",
+            "sys:iphones5s",
+            "sysversion:7.1.2",
+            "deviceidentifier:deviceidentifier",
+            "service:/http/user",
+            "action:checkvercode.action",
+
     })
-    @GET("users/{user}")
+    @POST("users/{user}")
     Call<UserBean> userInfo(@Path("userId") String userId);
 
     @FormUrlEncoded

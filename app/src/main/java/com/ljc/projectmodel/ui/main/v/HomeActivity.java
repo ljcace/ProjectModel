@@ -5,6 +5,7 @@ import android.widget.TextView;
 
 import com.ljc.projectmodel.R;
 import com.ljc.projectmodel.ui.MainActivity;
+import com.ljc.projectmodel.ui.menu2.v.ImageZoomingActivity;
 import com.ljc.projectmodel.ui.menu3.v.NewsActivity;
 import com.ljc.projectmodel.ui.menu4.v.LinkmanActivity;
 
@@ -19,6 +20,8 @@ public class HomeActivity extends MainActivity implements HomeView, View.OnClick
     TextView tv_linkman;
     @BindView(R.id.tv_news)
     TextView tv_news;
+    @BindView(R.id.tv_img)
+    TextView tv_img;
 
     public HomeActivity() {
         super(R.layout.act_home);
@@ -32,7 +35,7 @@ public class HomeActivity extends MainActivity implements HomeView, View.OnClick
     public void refreshViews() {
     }
 
-    @OnClick({R.id.tv_linkman, R.id.tv_news})
+    @OnClick({R.id.tv_linkman, R.id.tv_news, R.id.tv_img})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_linkman:
@@ -40,6 +43,9 @@ public class HomeActivity extends MainActivity implements HomeView, View.OnClick
                 break;
             case R.id.tv_news:
                 startActivity(NewsActivity.class);
+                break;
+            case R.id.tv_img:
+                startActivity(ImageZoomingActivity.class);
                 break;
         }
     }

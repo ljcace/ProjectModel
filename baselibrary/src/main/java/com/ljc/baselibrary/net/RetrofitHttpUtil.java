@@ -1,5 +1,8 @@
 package com.ljc.baselibrary.net;
 
+import android.app.ProgressDialog;
+import android.content.Context;
+
 import com.ljc.baselibrary.ApplicationBase;
 import com.ljc.baselibrary.R;
 
@@ -20,6 +23,8 @@ public class RetrofitHttpUtil<T> implements Callback<T> {
     private OkHttpClient mHttpClient = null;
     private Retrofit retrofit = null;
     private Callback<T> callback;
+    private Context mContext;
+    private ProgressDialog dialog;
 
     public RetrofitHttpUtil() {
         mHttpClient = new OkHttpClient.Builder()
@@ -30,6 +35,9 @@ public class RetrofitHttpUtil<T> implements Callback<T> {
                 .baseUrl(ApplicationBase.getInstance().getApplicationContext().getString(R.string.baseUrl))
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+        mContext = ApplicationBase.getInstance().getApplicationContext();
+        dialog = new ProgressDialog(mContext);
+        dialog.setMessage(mContext.getString(R.string.text_loading));
     }
 
     public static RetrofitHttpUtil getInstance() {
@@ -47,6 +55,9 @@ public class RetrofitHttpUtil<T> implements Callback<T> {
 
     public void httpRequest(Call<T> call, Callback<T> callback) {
         cancelTag(call);
+        if (dialog != null) {
+            dialog.show();
+        }
         this.callback = callback;
         call.enqueue(this);
     }
@@ -57,11 +68,19 @@ public class RetrofitHttpUtil<T> implements Callback<T> {
 
     @Override
     public void onResponse(Call<T> call, Response<T> response) {
+        cancleDialog();
         callback.onResponse(call, response);
     }
 
     @Override
     public void onFailure(Call<T> call, Throwable t) {
+        cancleDialog();
         callback.onFailure(call, t);
+    }
+
+    private void cancleDialog() {
+        if (dialog != null) {
+            dialog.cancel();
+        }
     }
 }

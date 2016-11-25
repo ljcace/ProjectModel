@@ -2,6 +2,8 @@ package com.ljc.projectmodel.net;
 
 import com.ljc.baselibrary.net.RetrofitHttpUtil;
 
+import java.util.HashMap;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -14,8 +16,10 @@ public class RetrofitAsyncTask implements Callback {
     public static RetrofitAsyncTask retrofitAsyncTask = null;
     public RetrofitHttpUtil retrofitHttpUtil;
     public ApiFactory apiFactory;
+    private HashMap<String, onNetResponseListener> listeners;
 
     public RetrofitAsyncTask() {
+        listeners = new HashMap<>();
         retrofitHttpUtil = RetrofitHttpUtil.getInstance();
         apiFactory = ApiFactory.INSTANCE;
     }
@@ -30,15 +34,33 @@ public class RetrofitAsyncTask implements Callback {
     }
 
     public void getUserMsg(String userId, onNetResponseListener listener) {
-        retrofitHttpUtil.httpRequest(apiFactory.getInterfaceApi().userInfo(userId), this);
+        Call call = apiFactory.getInterfaceApi().userInfo(userId);
+        listeners.put(call.request().tag().toString(), listener);
+        retrofitHttpUtil.httpRequest(call, this);
     }
 
     public void login(String mobile, String password, onNetResponseListener listener) {
+        Call call = apiFactory.getInterfaceApi().login(mobile, password);
+        listeners.put(call.request().tag().toString(), listener);
         retrofitHttpUtil.httpRequest(apiFactory.getInterfaceApi().login(mobile, password), this);
     }
 
     @Override
     public void onResponse(Call call, Response response) {
+        String tag = call.request().tag().toString();
+        onNetResponseListener listener = listeners.get(tag);
+        if (response.isSuccessful()) {
+            String result = response.body().toString();
+            listener.onSuccess(result, tag);
+        } else {
+            String err_result = "";
+            try {
+                err_result = response.errorBody().string();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            listener.onFailure(err_result, tag);
+        }
     }
 
     @Override
@@ -47,8 +69,8 @@ public class RetrofitAsyncTask implements Callback {
     }
 
     public interface onNetResponseListener {
-        void onSuccess();
+        void onSuccess(String result, String tag);
 
-        void onFailure();
+        void onFailure(String err_result, String tag);
     }
 }

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.ljc.projectmodel.views.DampScrollView
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数3"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数4"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数5"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数6"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数7"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数8"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数9"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数10"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数11"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数12"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数13"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数14"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数15"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数16"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数17"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数18"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数19"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数20"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数21"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数22"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数23"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数24"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数25"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数26"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dim30"
+                android:text="充数27"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim40" />
+        </LinearLayout>
+    </com.ljc.projectmodel.views.DampScrollView>
+
+    <include layout="@layout/comm_title" />
+
+</RelativeLayout>
