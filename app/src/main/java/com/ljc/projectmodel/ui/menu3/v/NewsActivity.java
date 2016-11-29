@@ -5,7 +5,6 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.ljc.baselibrary.utils.LogUtils;
 import com.ljc.baselibrary.widgets.DividerItemDecoration;
 import com.ljc.projectmodel.R;
 import com.ljc.projectmodel.ui.MainActivity;
@@ -81,14 +79,6 @@ public class NewsActivity extends MainActivity implements NewsView {
                 int width = MAX_WIDTH - (int) (percent * (MAX_WIDTH - MIN_WIDTH));
                 lp.width = width;
                 tv_search.setLayoutParams(lp);
-                if (verticalOffset == 0) {//张开
-                } else if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) {//收缩
-                } else {
-                    int alpha = 255 - Math.abs(verticalOffset) - 150;
-                    if (alpha <= 0) {//收缩
-                    } else {//张开
-                    }
-                }
             }
         });
     }
