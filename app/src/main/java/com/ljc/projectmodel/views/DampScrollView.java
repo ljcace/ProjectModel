@@ -78,29 +78,24 @@ public class DampScrollView extends ScrollView {
     }
 
     @Override
+    protected void onScrollChanged(int x, int y, int oldx, int oldy) {
+        super.onScrollChanged(x, y, oldx, oldy);
+        if (y > oldy ? y >= height : y < height)
+            refreshTitleAlpha(y - oldy);
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent ev) {
         ViewGroup.LayoutParams lp = view.getLayoutParams();
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 downY = ev.getY();
+                isScrolling = true;
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (view == null) {
-                    break;
+                if (isScrolling) {
+                    refreshImgScale(lp, ev.getY() - downY);
                 }
-                float y = ev.getY();
-                int scrollY = getScrollY();
-                if (!isScrolling) {
-                    if (scrollY <= 1) {
-                        downY = y;
-                    } else {
-                        refreshTitleAlpha(y, scrollY);
-                        break;
-                    }
-                }
-                refreshTitleAlpha(y, scrollY);
-
-                refreshImgScale(lp, y);
                 break;
             case MotionEvent.ACTION_UP:
                 isScrolling = false;
@@ -114,14 +109,17 @@ public class DampScrollView extends ScrollView {
      * 刷新控件大小
      *
      * @param lp
-     * @param y
+     * @param extraY
      */
-    private void refreshImgScale(ViewGroup.LayoutParams lp, float y) {
-        float disPosition = (y - downY) * IMG_DAMP;
+    private void refreshImgScale(ViewGroup.LayoutParams lp, float extraY) {
+        if (view == null) {
+            return;
+        }
+        float disPosition = extraY * IMG_DAMP;
         if (disPosition < 0) {
             return;
         }
-        isScrolling = true;
+
         lp.width = (int) (width + disPosition * IMG_SCALE);
         lp.height = (int) (height + disPosition);
         view.setLayoutParams(lp);
@@ -130,27 +128,20 @@ public class DampScrollView extends ScrollView {
     /**
      * 刷新标题透明度
      *
-     * @param y
-     * @param scrollY
+     * @param exalpha
      */
-    private void refreshTitleAlpha(float y, int scrollY) {
+    private void refreshTitleAlpha(float exalpha) {
         if (title == null) {
             return;
         }
-        float exalpha = (downY - y) * ALPHA_DAMP;
-        if (alpha > alpha + exalpha ? scrollY <= height : scrollY > height) {
-            alpha += exalpha;
-            if (alpha < MIN_ALPHA) {
-                alpha = MIN_ALPHA;
-            }
-            if (alpha > MAX_ALPHA) {
-                alpha = MAX_ALPHA;
-            }
-            if (scrollY <= 1) {
-                alpha = MIN_ALPHA;
-            }
-            this.title.setBackgroundColor(Color.argb((int) alpha, red, green, blue));
+        alpha += exalpha;
+        if (alpha < MIN_ALPHA) {
+            alpha = MIN_ALPHA;
         }
+        if (alpha > MAX_ALPHA) {
+            alpha = MAX_ALPHA;
+        }
+        this.title.setBackgroundColor(Color.argb((int) alpha, red, green, blue));
     }
 
     /**
