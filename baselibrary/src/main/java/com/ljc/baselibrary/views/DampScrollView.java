@@ -1,4 +1,4 @@
-package com.ljc.projectmodel.views;
+package com.ljc.baselibrary.views;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;

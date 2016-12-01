@@ -30,5 +30,16 @@
         <item>Y</item>
         <item>Z</item>
     </string-array>
-
+    <declare-styleable name="PullToRefreshRecycleView">
+        <attr name="Mode">
+            <enum name="Both" value="0" />
+            <enum name="Refresh" value="1" />
+            <enum name="LoadMore" value="2" />
+        </attr>
+        <attr name="headIcon" format="reference" />
+        <attr name="refreshAnimation" format="reference" />
+        <attr name="headAnimationBackground" format="reference" />
+        <attr name="android:divider" />
+        <attr name="android:dividerHeight" />
+    </declare-styleable>
 </resources>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_texthead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|bottom"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_headicon"
+                android:layout_width="@dimen/dim160"
+                android:layout_height="@dimen/dim120"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:id="@+id/tv_headhint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dim20"
+                android:text="释放加载" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_animationhead"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_headbackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#034736"
+                android:scaleType="matrix" />
+
+            <ImageView
+                android:id="@+id/iv_headanimation"
+                android:layout_width="@dimen/dim160"
+                android:layout_height="@dimen/dim120"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_launcher" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/mSwipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00ff00" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_foot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#60000000"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/dim20"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="@dimen/dim50"
+                android:layout_height="@dimen/dim50" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dim30"
+                android:text="正在加载更多..."
+                android:textColor="#333333"
+                android:textSize="@dimen/dim30" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <com.ljc.projectmodel.views.DampScrollView
+    <com.ljc.baselibrary.views.DampScrollView
         android:id="@+id/root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -265,7 +265,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/dim40" />
         </LinearLayout>
-    </com.ljc.projectmodel.views.DampScrollView>
+    </com.ljc.baselibrary.views.DampScrollView>
 
     <include layout="@layout/comm_title" />
 
